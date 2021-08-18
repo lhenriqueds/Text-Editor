@@ -8,7 +8,40 @@
 </head>
 
 <body>
-    <h1>yay!!</h1>
+  <div class="controls" id="controls">
+    <label for="texto">Cor do Texto:</label>
+    <input id="texto" type="color" name="texto" value="#ffc600">
+    <label for="fundo">Cor do Fundo:</label>
+    <input id="fundo" type="color" name="fundo" value="#F5F5F5">
+    <label>Tamanho da Fonte</label>
+    <select type="text" id="inputFontSize" onchange="alterFont(this.value)">
+      <option value="2">10 px</option>
+      <option value="3">12 px</option>
+      <option value="4">14 px</option>
+      <option value="6">16 px</option>
+      <option value="7">18 px</option>
+    </select>
+    <label for="upload">upload imagem</label>
+    <input type="file" id="upload" hidden />
+  
+    <input type="button" value="Mostrar borda" onclick="addBorder()" />
+    <input type="button" value="Esconder borda" onclick="removeborder()" />
+    <button class="btnColor" onclick="formatText('justifyLeft')">JL</button>
+    <button class="btnColor" onclick="formatText('justifyCenter')">JC</button>
+    <button class="btnColor" onclick="formatText('justifyRight')">JR</button>
+    <button class="btnColor" onclick="formatText('justifyFull')">JF</button>
+    <button class="btnColor" onclick="formatText('bold')">B</button>
+    <button class="btnColor" onclick="formatText('italic')">I</button>
+    <button class="btnColor" onclick="formatText('underline')">U</button>
+  
+    <button onClick="copiarHTML()">Copiar HTML</button>
+    <button><a href="#" id="donwload-link" onClick="contentDownload()">Download</a></button>
+  </div>
+    <div class="content">
+      <p contenteditable="true">
+        Texto Aqui
+      </p>
+    </div>
 </body>
 
 </html>
